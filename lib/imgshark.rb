@@ -5,7 +5,7 @@ require 'yajl'
 require 'json'
 require 'map'
 require 'http'
-require 'rmagick'
+require 'RMagick'
 
 class ImgShark
   
