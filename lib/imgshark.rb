@@ -15,11 +15,11 @@ class ImgShark
   
   def initialize(opts = {})
     AWS::S3::Base.establish_connection!(
-      :access_key_id     => opts.delete(:amazon_access_key_id) || ENV['AMAZON_ACCESS_KEY_ID'], 
+      :access_key_id     => opts.delete(:amazon_access_key_id) || ENV['AMAZON_ACCESS_KEY_ID'],
       :secret_access_key => opts.delete(:amazon_secret_access_key) || ENV['AMAZON_SECRET_ACCESS_KEY']
     )
     redis_url = opts.delete(:redis_url) || ENV['REDISTOGO_URL']
-    @redis = redis_url ? Redis.new(redis_url) : Redis.new()
+    @redis = redis_url ? Redis.new(:url => redis_url) : Redis.new()
     @json = Yajl::Parser.new
     @bucket = opts.delete(:amazon_bucket) || ENV['AMAZON_BUCKET']
   end

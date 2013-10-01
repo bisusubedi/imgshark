@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.version     = ImgShark::VERSION
   s.authors     = ["Tyler Montgomery"]
   s.email       = ["tyler@everlater.com"]
-  s.homepage    = "http://github.com/ubermajestix/imgshark"
+  s.homepage    = "http://github.com/bisusubedi/imgshark"
   s.summary     = %q{Resizes images, stores info in Redis, puts new image on S3}
   s.description = %q{sharking about}
 
@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_dependency 'redis',      '~> 2.0 '
+  s.add_dependency 'redis',      '~> 3.0.4'
   s.add_dependency 'aws-s3',     '~> 0.6.2'
   s.add_dependency 'yajl-ruby',  '~> 1.0.0'
   s.add_dependency 'map',        '~> 4.5.0'
